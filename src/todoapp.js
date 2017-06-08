@@ -12,9 +12,15 @@ class TodoApp extends Component {
   }
 
   componentDidMount() {
+    // this.unsub =
     store.subscribe(() => this.setState(store.getState()));
       this.getNewItem();
+      console.log('mounted?')
   }
+
+  // componentWillUnmount() {
+  //   this.unsub();
+  // }
 
   createNewItem(todoText) {
     $.ajax({

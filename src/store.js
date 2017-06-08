@@ -17,8 +17,9 @@ const todoReducer = (state = beginState, action) => {
       return { todovalue: '' };
     case 'GET_ITEMS':
       return { items: action.items };
+    default:
+      return state;
   }
-  return state;
 }
 
 const store = createStore(todoReducer);
