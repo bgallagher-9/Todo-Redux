@@ -67,6 +67,17 @@ li button {
 .complete {
 	color: grey;
 	background-color: red;
+	margin: 20px auto;
+	height: 5vh;
+	width: 40vw;
+	border-radius: 15px;
+}
+
+.not-complete {
+	margin: 20px auto;
+	height: 5vh;
+	width: 40vw;
+	border-radius: 15px;
 }
 
 button {

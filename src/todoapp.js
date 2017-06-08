@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import { store, actions } from './store.js';
 import './App.css';
-// console.log('store', store, 'actions', actions);
 
 const bucketId = "4ad1ca83-07c1-499b-9c86-e69676d374ee"
 
@@ -26,9 +25,7 @@ class TodoApp extends Component {
       }
     })
     .done((data) => {
-      // console.log(data);
        this.getNewItem()
-      //  console.log(this.state);
      });
    }
 
@@ -37,21 +34,17 @@ class TodoApp extends Component {
       url: `https://spiffy-todo-api.herokuapp.com/api/items?bucketId=${bucketId}`
     })
     .done((data) => {
-
       store.dispatch(Object.assign({}, actions.GET_ITEMS, { items: data.items }));
-      // console.log(this.state);
     });
   }
 
   removeNewItem(id, evt) {
     evt.stopPropagation();
-
     $.ajax({
       url: `https://spiffy-todo-api.herokuapp.com/api/item/${id}?bucketId=${bucketId}`,
       method: 'DELETE'
     })
     .done((data) => {
-      console.log('delete');
       this.getNewItem();
     })
   }
@@ -68,7 +61,6 @@ class TodoApp extends Component {
   }
 
   toggleItem(id) {
-    console.log('toggle');
     $.ajax({
       url: `https://spiffy-todo-api.herokuapp.com/api/item/${id}/togglestatus?bucketId=${bucketId}`,
       method: 'POST'})
@@ -76,9 +68,8 @@ class TodoApp extends Component {
   }
 
   render() {
-    console.log('render', this.state);
     let todoItems = this.state.items.map((x) => {
-      const className = x.isComplete ? 'complete' : '';
+      const className = x.isComplete ? 'complete' : 'not-complete';
       return <li
               className={className}
               key={x.id}

@@ -12,8 +12,7 @@ class App extends Component {
         <div className="container">
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/todo">TodoApp</Link></li>
-            <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/todo">TodoApp</Link>:  Click on the items to toggle them <span className="red">red</span></li>
           </ul>
           <Route exact={true} path="/" component={Home} />
           <Route path="/todo" component={TodoApp} />
@@ -23,6 +22,5 @@ class App extends Component {
     );
   }
 }
-// <Route path="/gallery" component={Gallery} />
 
 export default App;
