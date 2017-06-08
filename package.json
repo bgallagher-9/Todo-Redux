@@ -1,8 +1,9 @@
 {
-  "name": "day-41-redux-todo",
+  "name": "Todo-Redux",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jquery": "^3.2.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1"
@@ -16,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy" : "npm run build&&gh-pages -d build"
+    "deploy": "npm run build&&gh-pages -d build"
   },
   "homepage": "https://bgallagher-9.github.io/Todo-Redux"
 }
